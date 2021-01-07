@@ -18,9 +18,9 @@ The list and names of the 79 selected features is given in the file 'selected_fe
 
 Once this step is done, we bind the train and test sets to obtain 2 full data sets, with the subject ID, activity ID and the selected features, and we then join both datasets to obtain one full dataset.
 
-We rename the columns so the variables have relevant names, and rearrange the final dataset by ascending subject ID. Finally, we convert the activity ID into a factor, and rename the levels from numeric to text using the correspondance given in 'activity_labels.txt'. What we obtain is a tidy dataset containing the information about 81 variables (subject ID, activity ID and the 79 selected features) about a total of 10,299 individual experiments.
+We rename the columns so the variables have relevant names, and rearrange the final dataset by ascending subject ID. Finally, we convert the activity ID into a factor, and rename the levels from numeric to text using the correspondance given in 'activity_labels.txt'. What we obtain is a tidy dataset (data_full) containing the information about 81 variables (subject ID, activity ID and the 79 selected features) about a total of 10,299 individual experiments.
 
-To go further, we use the function group_by to create groups in the dataframe based on the subject ID and activity ID. We use then summarise_all to obtain the mean of each variable for each pair of subject and activity present in the dataframe. In the end, we obtain a tidier dataset, containing 81 variables for 180 unique pairs of subject ID and activity ID. 
+To go further, we use the function group_by to create groups in the dataframe based on the subject ID and activity ID. We use then summarise_all to obtain the mean of each variable for each pair of subject and activity present in the dataframe. In the end, we obtain a tidier dataset (data_sum), containing 81 variables for 180 unique pairs of subject ID and activity ID. 
 
 
 
