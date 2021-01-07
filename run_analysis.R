@@ -31,7 +31,7 @@ mstd <- grep("(mean|std)",features_names)
 mstd_names <- features_names[mstd]
 mstd_names <- gsub("()","",mstd_names,fixed=TRUE)
 
-write.table(mstd_names,'selected_features.txt',sep = "\t")
+write.table(mstd_names,'selected_features.txt',row.name=FALSE, col.names = FALSE)
 
 test_data_mstd <- test_data[,mstd]
 train_data_mstd <- train_data[,mstd]
@@ -58,3 +58,5 @@ data_group <- group_by(data_full,data_full$subjetID,data_full$activityID)
 data_sum <- as.data.frame(summarise_all(data_group,mean))
 data_sum <- data_sum[-c(3,4)]
 data_sum <- rename(data_sum, subjectID = `data_full$subjetID`, activityID = `data_full$activityID`)
+
+write.table(data_sum,"tidy_dataset.txt", row.name=FALSE)
