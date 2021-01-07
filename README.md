@@ -7,4 +7,5 @@ The repository contains the following:
 - This README.md file,
 - The folder "UCI HAR Dataset": contains the .txt files necessary to run the analysis,
 - run_analysis.R: R script containing the code to perform the analysis,
-- CodeBook.md file: document containing details about the variable and the analysis performed.
+- CodeBook.md file: document containing details about the variable and the analysis performed,
+- 'selected_features.txt': text file containing the names of the selected features for the assignement.
