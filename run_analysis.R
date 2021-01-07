@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Clear Environement
 
 rm(list = ls())
@@ -57,7 +56,7 @@ data_group <- group_by(data_full,data_full$subjetID,data_full$activityID)
 data_sum <- as.data.frame(summarise_all(data_group,mean))
 data_sum <- data_sum[-c(3,4)]
 data_sum <- rename(data_sum, subjectID = `data_full$subjetID`, activityID = `data_full$activityID`)
-=======
+
 ## Clear Environement
 
 rm(list = ls())
@@ -116,4 +115,4 @@ data_group <- group_by(data_full,data_full$subjetID,data_full$activityID)
 data_sum <- as.data.frame(summarise_all(data_group,mean))
 data_sum <- data_sum[-c(3,4)]
 data_sum <- rename(data_sum, subjectID = `data_full$subjetID`, activityID = `data_full$activityID`)
->>>>>>> eebe1037066275462eed0c27a650eef79b685b40
+
