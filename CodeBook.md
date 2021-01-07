@@ -13,7 +13,7 @@ The test set contains the information of 561 variables about a total of 2,947 in
 To identify what are the observables corresponding to each of this 561 variables, we load the files 'features.txt'. The features' names is contained in the second column of this dataframe.
 
 As requested by the instructions, we select the variables corresponding to the mean and standard deviation of observables. To do so, we use the grep function as well as a regular expression to locate the presence of "mean" or "std" in the features' names.
-After selection, we also "clean" the names of the variables by removing the '()' using gsub, and we can slice the test and train dataframes selecting the columns corresponding to the selected features.
+After selection, we also "clean" the names of the variables by removing the '()' using gsub and using various other substitutions to make them clearer to understand, and we can slice the test and train dataframes selecting the columns corresponding to the selected features.
 The list and names of the 79 selected features is given in the file 'selected_features.txt'.
 
 Once this step is done, we bind the train and test sets to obtain 2 full data sets, with the subject ID, activity ID and the selected features, and we then join both datasets to obtain one full dataset.
