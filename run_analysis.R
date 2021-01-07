@@ -31,6 +31,8 @@ mstd <- grep("(mean|std)",features_names)
 mstd_names <- features_names[mstd]
 mstd_names <- gsub("()","",mstd_names,fixed=TRUE)
 
+write.table(mstd_names,'selected_features.txt',sep = "\t")
+
 test_data_mstd <- test_data[,mstd]
 train_data_mstd <- train_data[,mstd]
 
