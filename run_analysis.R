@@ -25,11 +25,21 @@ test_data <- read.table("UCI HAR Dataset/test/X_test.txt")
 features<- read.table("UCI HAR Dataset/features.txt")
 features_names <- features$V2
 
-## Select only mean and std columns
+## Select only mean and std columns and improve names
 
 mstd <- grep("(mean|std)",features_names)
 mstd_names <- features_names[mstd]
-mstd_names <- gsub("()","",mstd_names,fixed=TRUE)
+
+mstd_names<-gsub("Acc", "Accelerometer_", mstd_names)
+mstd_names<-gsub("Gyro", "Gyroscope_", mstd_names)
+mstd_names<-gsub("BodyBody", "Body", mstd_names)
+mstd_names<-gsub("Mag", "Magnitude_", mstd_names)
+mstd_names<-gsub("tBody", "TimeBody_", mstd_names)
+mstd_names<-gsub("-mean()", "Mean", mstd_names, ignore.case = TRUE)
+mstd_names<-gsub("-std()", "STD", mstd_names, ignore.case = TRUE)
+mstd_names<-gsub("-freq()", "_Frequency", mstd_names, ignore.case = TRUE)
+mstd_names<-gsub("fBody", "FrequencyBody_", mstd_names)
+mstd_names<-gsub("tGravity", "TimeGravity_", mstd_names)
 
 write.table(mstd_names,'selected_features.txt',row.name=FALSE, col.names = FALSE)
 
